@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azan-Chat-Application</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Join Screen -->
+    <div id="joinScreen">
+
+        <div class="join-box">
+
+            <h1>💬 Chat-Application</h1>
+
+            <p>Enter your username to join</p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter Username"
+                maxlength="20"
+            >
+
+            <button onclick="joinChat()">
+                Join Chat
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Chat Screen -->
+    <div id="chatScreen" style="display:none;">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <h2>🟢 Online Users</h2>
+            </div>
+
+            <ul id="users"></ul>
+
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+
+            <header class="chat-header">
+                <h2>Created Azan</h2>
+            </header>
+
+            <div id="messages"></div>
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Type your message..."
+                    autocomplete="off"
+                >
+
+                <button onclick="sendMessage()">
+                    Send
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+    <!-- App JS -->
+    <script src="app.js"></script>
+
+</body>
+</html>
